@@ -1,0 +1,55 @@
+{
+    "name": "lisettes/auth",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "php",
+        "hyperf"
+    ],
+    "description": "",
+    "autoload": {
+        "psr-4": {
+            "Lisettes\\Auth\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HyperfTest\\": "tests"
+        }
+    },
+    "require": {
+        "php": ">=7.4",
+        "firebase/php-jwt": "^5.4",
+        "hyperf/cache": "2.2.*",
+        "hyperf/config": "2.2.*",
+        "hyperf/db-connection": "2.2.*",
+        "hyperf/di": "2.2.*",
+        "hyperf/framework": "2.2.*",
+        "hyperf/http-server": "2.2.*",
+        "hyperf/model-cache": "2.2.*",
+        "lisettes/utils": "^1.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.0",
+        "phpunit/phpunit": ">=7.0",
+        "swoole/ide-helper": "^4.5",
+        "symfony/var-dumper": "^5.1"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "secure-http": false
+    },
+    "scripts": {
+        "test": "phpunit -c phpunit.xml --colors=always",
+        "analyse": "phpstan analyse --memory-limit 1024M -l 0 ./src",
+        "cs-fix": "php-cs-fixer fix $1"
+    },
+    "extra": {
+        "hyperf": {
+            "config": "Lisettes\\Auth\\ConfigProvider"
+        }
+    }
+}
